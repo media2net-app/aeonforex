@@ -27,6 +27,29 @@ body {
   overflow-x: hidden;
 }
 
+/* Scroll Snap - Only on desktop/tablet (>=768px) */
+@media (min-width: 768px) {
+  #main-container {
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  
+  section[class*="snap-start"] {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+/* Mobile - Normal scroll (<768px) */
+@media (max-width: 767px) {
+  #main-container {
+    scroll-snap-type: none;
+    height: auto;
+    overflow-y: auto;
+  }
+}
+
 /* Marquee animation */
 @keyframes marquee {
   from {
@@ -53,4 +76,31 @@ body {
 
 .animate-marquee-infinite {
   animation: marquee-infinite var(--duration, 40s) linear infinite;
+}
+
+/* Custom Gold Scrollbar */
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #D4AF37 0%, #C9A961 50%, #B8860B 100%);
+  border-radius: 5px;
+  border: 2px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #FFD700 0%, #D4AF37 50%, #C9A961 100%);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #D4AF37 #000000;
 }

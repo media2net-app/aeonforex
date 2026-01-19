@@ -68,7 +68,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#000000] to-[#111111] snap-start snap-always pt-20 md:pt-24 py-8 md:py-12">
+    <section id="faq" className="relative min-h-[auto] md:min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#000000] to-[#111111] snap-start snap-always pt-20 md:pt-24 py-12 md:py-8">
       <div className="max-w-7xl mx-auto w-full px-2 sm:px-4">
         <div className="text-center mb-8 md:mb-12 px-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-white">
@@ -86,7 +86,7 @@ export default function FAQ() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.03 }}
-              className="bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden hover:border-gray-700 transition-all"
+              className="bg-gray-900/40 backdrop-blur-sm border border-[#D4AF37]/20 rounded-xl overflow-hidden hover:border-[#D4AF37]/40 transition-all shadow-lg shadow-[#D4AF37]/5 hover:shadow-xl hover:shadow-[#D4AF37]/10"
             >
               <button
                 onClick={() => toggleFAQ(index)}
@@ -96,7 +96,7 @@ export default function FAQ() {
                   {faq.question}
                 </span>
                 {openIndex === index ? (
-                  <ChevronUp className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" />
+                  <ChevronUp className="w-4 h-4 text-[#D4AF37] flex-shrink-0 mt-0.5" />
                 ) : (
                   <ChevronDown className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" />
                 )}

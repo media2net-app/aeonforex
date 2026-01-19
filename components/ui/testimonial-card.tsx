@@ -1,10 +1,10 @@
 import { cn } from "@/lib/utils"
-import { Avatar, AvatarImage } from "@/components/ui/avatar"
+import { Star } from "lucide-react"
 
 export interface TestimonialAuthor {
   name: string
   handle: string
-  avatar: string
+  avatar?: string
 }
 
 export interface TestimonialCardProps {
@@ -12,13 +12,15 @@ export interface TestimonialCardProps {
   text: string
   href?: string
   className?: string
+  rating?: number
 }
 
 export function TestimonialCard({ 
   author,
   text,
   href,
-  className
+  className,
+  rating = 5
 }: TestimonialCardProps) {
   const Card = href ? 'a' : 'div'
   
@@ -26,30 +28,41 @@ export function TestimonialCard({
     <Card
       {...(href ? { href } : {})}
       className={cn(
-        "flex flex-col rounded-lg border-t",
-        "bg-gradient-to-b from-gray-800/50 to-gray-900/10",
+        "flex flex-col rounded-lg border",
+        "bg-gray-900/30 backdrop-blur-sm",
         "p-4 text-start sm:p-6",
-        "hover:from-gray-800/60 hover:to-gray-900/20",
+        "hover:bg-gray-900/40",
         "max-w-[320px] sm:max-w-[320px]",
-        "transition-colors duration-300",
-        "border-gray-700",
+        "transition-all duration-300",
+        "border-[#D4AF37]/20 hover:border-[#D4AF37]/40",
+        "shadow-lg shadow-[#D4AF37]/5 hover:shadow-xl hover:shadow-[#D4AF37]/10",
         className
       )}
     >
-      <div className="flex items-center gap-3">
-        <Avatar className="h-12 w-12">
-          <AvatarImage src={author.avatar} alt={author.name} />
-        </Avatar>
-        <div className="flex flex-col items-start">
-          <h3 className="text-md font-semibold leading-none text-white">
-            {author.name}
-          </h3>
+      <div className="flex flex-col items-start mb-3">
+        <div className="flex items-center gap-2 mb-2">
+          {[...Array(5)].map((_, i) => (
+            <Star
+              key={i}
+              className={cn(
+                "w-4 h-4",
+                i < rating
+                  ? "fill-[#FFB800] text-[#FFB800]"
+                  : "fill-gray-700 text-gray-700"
+              )}
+            />
+          ))}
+        </div>
+        <h3 className="text-md font-semibold leading-none text-white">
+          {author.name}
+        </h3>
+        {author.handle && (
           <p className="text-sm text-gray-400">
             {author.handle}
           </p>
-        </div>
+        )}
       </div>
-      <p className="sm:text-md mt-4 text-sm text-gray-300">
+      <p className="sm:text-md text-sm text-gray-300">
         {text}
       </p>
     </Card>

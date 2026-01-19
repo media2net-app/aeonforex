@@ -12,6 +12,7 @@
     "@radix-ui/react-avatar": "^1.1.11",
     "clsx": "^2.1.1",
     "hls.js": "^1.6.15",
+    "lightweight-charts": "^5.1.0",
     "lucide-react": "^0.562.0",
     "motion": "^12.26.2",
     "next": "16.1.2",

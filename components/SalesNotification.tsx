@@ -98,7 +98,7 @@ export default function SalesNotification() {
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-lg shadow-2xl p-4 backdrop-blur-sm">
             <div className="flex items-start gap-3">
               <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#C9A961] to-[#B8860B] flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
@@ -106,7 +106,7 @@ export default function SalesNotification() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-yellow-500 text-sm font-semibold animate-pulse">
+                  <span className="text-[#D4AF37] text-sm font-semibold animate-pulse">
                     ✓
                   </span>
                   <p className="text-white text-sm font-semibold truncate">
@@ -124,7 +124,7 @@ export default function SalesNotification() {
             
             {/* Pulse effect */}
             <motion.div
-              className="absolute inset-0 rounded-lg bg-gradient-to-r from-yellow-500/20 to-orange-500/20"
+              className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#D4AF37]/25 to-[#C9A961]/25"
               animate={{
                 opacity: [0, 0.3, 0],
               }}

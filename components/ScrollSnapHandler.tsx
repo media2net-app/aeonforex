@@ -9,6 +9,14 @@ export default function ScrollSnapHandler() {
   const scrollDirectionRef = useRef<'up' | 'down' | null>(null);
 
   useEffect(() => {
+    // Only enable scroll snap on desktop/tablet (>=768px)
+    const isDesktop = window.innerWidth >= 768;
+    
+    if (!isDesktop) {
+      // On mobile, disable scroll snap - let users scroll naturally
+      return;
+    }
+
     const SCROLL_LOCK_DURATION = 2000; // 2 seconds lock
     const SCROLL_COOLDOWN = 100; // Minimum time between scrolls (ms)
 

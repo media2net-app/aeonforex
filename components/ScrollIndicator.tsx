@@ -24,7 +24,7 @@ export default function ScrollIndicator() {
       >
         <span className="text-gray-400 text-sm mb-2">Scroll to video</span>
         <svg
-          className="w-6 h-6 text-yellow-500"
+          className="w-6 h-6 text-[#D4AF37]"
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"

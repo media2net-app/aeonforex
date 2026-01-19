@@ -38,7 +38,7 @@ export default function VideoPlayer({ src, hlsSrc, poster, className = '' }: Vid
 
   if (src || hlsSrc) {
     return (
-      <div className={`relative aspect-video rounded-2xl overflow-hidden border-2 border-gray-800 ${className}`}>
+      <div className={`relative aspect-video rounded-2xl overflow-hidden ${className}`}>
         <video
           ref={videoRef}
           className="w-full h-full object-cover"
@@ -61,7 +61,7 @@ export default function VideoPlayer({ src, hlsSrc, poster, className = '' }: Vid
     <div className={`relative aspect-video rounded-2xl overflow-hidden border-2 border-gray-800 bg-gradient-to-br from-gray-900 to-black ${className}`}>
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center shadow-lg shadow-yellow-500/30 animate-pulse">
+          <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#C9A961] to-[#B8860B] flex items-center justify-center shadow-lg shadow-[#D4AF37]/40 animate-pulse">
             <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z"/>
             </svg>
