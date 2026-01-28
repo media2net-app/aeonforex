@@ -6,10 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "remotion:studio": "remotion studio",
+    "remotion:render": "remotion render"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.11",
+    "@remotion/player": "^4.0.410",
     "clsx": "^2.1.1",
     "hls.js": "^1.6.15",
     "lightweight-charts": "^5.1.0",
@@ -18,9 +21,12 @@
     "next": "16.1.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "remotion": "^4.0.409",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
+    "@remotion/bundler": "^4.0.409",
+    "@remotion/cli": "^4.0.409",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
